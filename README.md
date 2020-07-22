@@ -12,11 +12,13 @@ This is a docker image based on `alpine:3.12` for setting up a [tailscale](https
 
 - `--cap-add=NET_ADMIN`
 - `--device=/dev/net/tun`
+- Volume for persistent storage `/tailscale`
 
 ## Use
 
 ```bash
 docker run -d \
+    -v /tailscale \
     --cap-add=NET_ADMIN \
     --device=/dev/net/tun \
     --network=<docker_net> \
