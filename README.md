@@ -11,7 +11,6 @@ This is a docker image based on `alpine:3.12` for setting up a [tailscale](https
 ## Requirements
 
 - `--cap-add=NET_ADMIN`
-- `--device=/dev/net/tun`
 - Volume for persistent storage `/tailscale`
 
 ## Use
@@ -20,7 +19,6 @@ This is a docker image based on `alpine:3.12` for setting up a [tailscale](https
 docker run -d \
     -v /tailscale \
     --cap-add=NET_ADMIN \
-    --device=/dev/net/tun \
     --network=<docker_net> \
     -e "ROUTES=<docker_net_prefix>" \
     -e "AUTHKEY=<your_auth_key>" \
