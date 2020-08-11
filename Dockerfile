@@ -1,7 +1,7 @@
 FROM alpine:3.12 AS builder
 
 ARG CHANNEL=unstable
-ARG VERSION=0.100.0-190
+ARG VERSION=1.0.4
 ARG ARCH=amd64
 
 RUN mkdir /build
