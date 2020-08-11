@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Setup iptables
+iptables -t nat -A POSTROUTING -o tailscale0 -j MASQUERADE
+
 if [ ! -d /dev/net ]; then mkdir /dev/net; fi
 if [ ! -e /dev/net/tun ]; then  mknod /dev/net/tun c 10 200; fi
 
